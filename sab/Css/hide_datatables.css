@@ -1,0 +1,27 @@
+﻿    .dataTables_filter {
+        display: none;
+    }
+    .dataTables_length {
+        display: none;
+    }
+/*.dataTables_paginate {
+ display: none;
+}*/
+.toHide{
+    display:none;
+}
+.toAlignC {
+    text-align:center;
+}
+.toAlignR{
+    text-align:right;
+}
+.toAlignL{
+    text-align:left;
+}
+/*input[type="text"]:enabled {
+    background: #b6d3e4;
+}
+input[type=text]:disabled {
+    background: #94b7cf;
+}*/
