@@ -1,0 +1,85 @@
+﻿
+	/* Modal styles */
+	.modal .modal-dialog {
+		max-width: 1200px;
+	}
+	.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+		padding: 20px 30px;
+	}
+	.modal .modal-content {
+		border-radius: 3px;
+	}
+	.modal .modal-footer {
+		background: #ecf0f1;
+		border-radius: 0 0 3px 3px;
+	}
+    .modal .modal-title {
+        display: inline-block;
+    }
+	.modal .form-control {
+		border-radius: 2px;
+		box-shadow: none;
+		border-color: #dddddd;
+	}
+	.modal textarea.form-control {
+		resize: vertical;
+	}
+	.modal .btn {
+		border-radius: 2px;
+		min-width: 100px;
+	}	
+	.modal form label {
+		font-weight: normal;
+	}*/	
+
+
+.btn-transparent-del {
+    background: transparent;
+    color: #E74C3C;
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+    border: 0px;
+     outline:none;
+}
+
+.btn-transparent-del:hover {
+            color: #E74C3C;
+            outline: none;
+}
+
+.dropdown-menu {
+ font-size:10px;
+}
+strong {
+  font-weight: normal;
+  color: #F44336;
+}
+.tt-suggestion strong {
+  font-weight: normal;
+  color: #F44336;
+}
+.btn-primary-outline {
+	background-color: transparent;
+	border-color: transparent;
+	color:#F44336;
+	box-shadow: none;
+	border: 0px;
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+.btn-primary-outline:hover {
+	color: #F8C471;
+	 outline:none;
+	 border:none;
+	 box-shadow: none;
+	
+}
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}

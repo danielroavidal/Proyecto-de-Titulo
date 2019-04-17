@@ -1,0 +1,23 @@
+﻿    .dataTables_filter {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .toHide {
+        display: none;
+    }
+
+    .toAlignC {
+        text-align: center;
+    }
+
+    .toAlignR {
+        text-align: right;
+    }
+
+    .toAlignL {
+        text-align: left;
+    }

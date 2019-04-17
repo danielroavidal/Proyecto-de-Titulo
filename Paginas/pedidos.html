@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" charset="utf-8"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+    <link href="../Css/modal.css" rel="stylesheet" />
+    <link href="../Css/hide_datatables.css" rel="stylesheet" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container body-content">
+        <br>
+        <input type="text" class="form-control invisible" readonly="readonly" id="le_txt">
+        <div class="row">
+            <div class="col-md-3" >
+                <label>Rut</label>
+                <input type="text" class="form-control " readonly="readonly" id="rutg_txt">
+            </div>
+            <div class="col-md-4" >
+                <label>Nombre</label>
+                <input type="text" class="form-control " readonly="readonly" id="nombre_txt">
+            </div>
+         </div> 
+         <br>
+        <div class="panel panel-primary" id="Busqueda">
+            <div class="panel-heading">Libro (s) Seleccionado (s)</div>
+            <form class="form-horizontal" role="form" id="seleccion">
+                <div class="panel-body">
+   
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+
+                                <img src="../Imagenes/signo_interrogacion.jpg" id="img_01" alt="Lights"
+                                    style="width:25%">
+                                <br>
+                                <div id='qrcode1' class="text-center"></div>
+                                <div class="caption">
+                                
+                                    <p class="text-center text-warning"><small><span id='span1'></span></small></p>
+                                    <button type="button" class="eliminar1 btn-primary-outline" id="L1" data-toggle="modal"
+                                        data-target="#deleteItemModal"><i class="material-icons">&#xE872;</i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="../Imagenes/signo_interrogacion.jpg" id="img_02" alt="Lights"
+                                    style="width:25%">
+                                <br>
+                                <div id='qrcode2' class="text-center"></div>
+                                <div class="caption">
+        
+                                    <p class="text-center text-warning"><small><span id='span2'></span></small></p>
+                                    <button type="button" class="eliminar2 btn-primary-outline" id="L2" data-toggle="modal"
+                                        data-target="#deleteItemModal"><i class="material-icons">&#xE872;</i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="../Imagenes/signo_interrogacion.jpg" id="img_03" alt="Lights"
+                                    style="width:25%">
+                                <br>
+                                <div id='qrcode3' class="text-center"></div>
+                                <div class="caption">
+                   
+                                    <p class="text-center text-warning"><small><span id='span3'></span></small></p>
+                                    <button type="button" class="eliminar3 btn-primary-outline" id="L3" data-toggle="modal"
+                                        data-target="#deleteItemModal"><i class="material-icons">&#xE872;</i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                    <div class="col-md-offset-10 col-md-2">
+                        <button type="button" class="autenticar btn btn-primary" id="btnAutenticar">Autenticación</button>
+                    </div>
+                    </div>
+
+                   
+                </div>
+            </form>
+        </div>
+        <div class="panel panel-primary" id="panel2">
+            <div class="panel-heading">Libros</div>
+            <form class="form-horizontal" role="form" id="listaE">
+                <div class="panel-body">
+                    <div class="form-group row">
+                        <div class="table-title">
+                            <div class=" row">
+                                <div class="col-xs-7">
+                                    <input class="form-control" type="text" placeholder="Campo de texto" id="busqueda"
+                                        style="margin:14px;">
+                                </div>
+                            </div>
+                            <table id="detallesLibro"
+                                class="table table-responsive table-striped table-condensed table-bordered table-hover"
+                                style="width: 98%;margin:12px; font-family:Calibri; font-size:12px;">
+                                <thead>
+                                    <tr>
+                                        <th>ISBN</th>
+                                        <th>TEMA</th>
+                                        <th>AUTOR</th>
+                                        <th>EDITORIAL</th>
+                                        <th>IDIOMA</th>
+                                        <th>AÑO EDICIÓN</th>
+                                        <th>DISPONIBLE</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="addItemsModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="valida_form">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Pedido</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <h5 class="text-info text-center"><span id="titulo_txt"></span></h5>
+                        </p>
+                        <div class="panel panel-primary" id="panel3">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group ">
+                                        <div class="col-xs-4">
+                                            <label>ISNB</label>
+                                            <input type="text" class="form-control" readonly="readonly" id="isbn_txt">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="qr_isbn" class="text-center" ></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-xs-9">
+                                            <label>Autor</label>
+                                            <input type="text" class="form-control" readonly="readonly" id="autor_txt">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-xs-9">
+                                            <label>Tema</label>
+                                            <input type="text" class="form-control" readonly="readonly" id="tema_txt">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-xs-5">
+                                            <label>Fecha Inicio</label>
+                                            <input type="text" class="form-control" readonly="readonly"
+                                                id="fecha_i_txt">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-xs-2">
+                                            <label>Dias</label>
+                                            <input type="text" class="form-control" readonly="readonly"
+                                                id="dias_txt">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-xs-5">
+                                            <label>Fecha Termino</label>
+                                            <input type="text" class="form-control" readonly="readonly"
+                                                id="fecha_t_txt">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class='row'>
+                                    <div class="form-group">
+                                        <div class="controls col-xs-2">
+                                            <label>Cantidad</label>
+                                            <input type="number" class="form-control toAlignC" id="cantidad_txt" min="1"
+                                                max="miMax" value="1" />
+                                            <p class="help-block"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                        <button type="button" class="Reservar btn btn-primary" id="btnReservar"
+                            data-eliminar="">Aceptar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div id="deleteItemModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Elimina Libro</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Estás seguro de que deseas Eliminar este Libro?</p>
+                        <p class="text-warning"><small>Esta acción no se puede deshacer.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="button" class="btn btn-danger" id="eliminaItem" value="Delete">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="text" class="form-control invisible" id="isbn1_txt">
+        <input type="text" class="form-control invisible" id="estado1_txt">
+        <input type="text" class="form-control invisible" id="id_pedido1_txt">
+        <input type="text" class="form-control invisible" id="cantidad1_txt">   
+        <input type="text" class="form-control invisible" id="dias1_txt">
+        <input type="text" class="form-control invisible" id="fecha_i1_txt">  
+        <input type="text" class="form-control invisible" id="fecha_t1_txt">   
+
+        <input type="text" class="form-control invisible"  id="isbn2_txt">
+        <input type="text" class="form-control invisible" id="estado2_txt">
+        <input type="text" class="form-control invisible" id="id_pedido2_txt">
+        <input type="text" class="form-control invisible" id="cantidad2_txt">   
+        <input type="text" class="form-control invisible" id="dias2_txt">
+        <input type="text" class="form-control invisible" id="fecha_i2_txt">  
+        <input type="text" class="form-control invisible" id="fecha_t2_txt">   
+        
+        <input type="text" class="form-control invisible" id="isbn3_txt">
+        <input type="text" class="form-control invisible" id="estado3_txt">
+        <input type="text" class="form-control invisible" id="id_pedido3_txt">
+        <input type="text" class="form-control invisible" id="cantidad3_txt">   
+        <input type="text" class="form-control invisible" id="dias3_txt">
+        <input type="text" class="form-control invisible" id="fecha_i3_txt">  
+        <input type="text" class="form-control invisible" id="fecha_t3_txt">  
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/moment.js"></script>
+    <script src="../Scripts/pedidos.js"></script>
+
+</body>
+
+</html>
