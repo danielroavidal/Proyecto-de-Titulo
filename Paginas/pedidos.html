@@ -8,7 +8,7 @@
     <title>Index</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js" charset="utf-8"></script>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-
+    <script src="../Scripts/funciones.js"></script>
 
     <link href="../Css/modal.css" rel="stylesheet" />
     <link href="../Css/hide_datatables.css" rel="stylesheet" />
@@ -32,13 +32,17 @@
         <br>
         <input type="text" class="form-control invisible" readonly="readonly" id="le_txt">
         <div class="row">
-            <div class="col-md-3" >
-                <label>Rut</label>
-                <input type="text" class="form-control " readonly="readonly" id="rutg_txt">
+            <div class="col-md-3 " >
+                <label>Rut : </label>
+                <label id="rutg_lbl"></label>
+
             </div>
             <div class="col-md-4" >
-                <label>Nombre</label>
-                <input type="text" class="form-control " readonly="readonly" id="nombre_txt">
+                <label>Nombre : </label>
+                <label id="nombre_lbl"></label>
+            </div>
+            <div class="col-md-offset-3 col-md-2">
+                <button type="button" class="btn btn-warning" id="btnCerrar">Cerrar Sessión</button>
             </div>
          </div> 
          <br>
@@ -46,11 +50,9 @@
             <div class="panel-heading">Libro (s) Seleccionado (s)</div>
             <form class="form-horizontal" role="form" id="seleccion">
                 <div class="panel-body">
-   
                     <div class="row">
                         <div class="col-md-4">
                             <div class="thumbnail">
-
                                 <img src="../Imagenes/signo_interrogacion.jpg" id="img_01" alt="Lights"
                                     style="width:25%">
                                 <br>
@@ -99,8 +101,6 @@
                         <button type="button" class="autenticar btn btn-primary" id="btnAutenticar">Autenticación</button>
                     </div>
                     </div>
-
-                   
                 </div>
             </form>
         </div>
@@ -285,9 +285,12 @@
         <input type="text" class="form-control invisible" id="dias3_txt">
         <input type="text" class="form-control invisible" id="fecha_i3_txt">  
         <input type="text" class="form-control invisible" id="fecha_t3_txt">  
+        <input type="text" class="form-control invisible" readonly="readonly"  id="rutg_txt">
+        <input type="text" class="form-control invisible " readonly="readonly"  id="nombre_txt">
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
     <script src="../Scripts/moment.js"></script>
     <script src="../Scripts/pedidos.js"></script>
 

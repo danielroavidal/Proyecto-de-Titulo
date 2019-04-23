@@ -1,5 +1,9 @@
 ﻿$(function() {
-   $("#rutg_txt").val("17404921");
+   $("#rutg_txt").val(localStorage.getItem("rut"));
+   $("#nombre_txt").val(localStorage.getItem("nombre"));
+   $("#rutg_lbl").html(formateaRut(localStorage.getItem("rut")));
+   $("#nombre_lbl").html(localStorage.getItem("nombre"));
+   
   var input = document.getElementById("cantidad_txt");
   input.setAttribute("max", 3 ); // set a new value;
   LimpiarDOM();
@@ -280,6 +284,11 @@ $("#btnReservar").click(function() {
     AsignaLibro();
   }
   $("#addItemsModal").modal("hide");
+});
+$("#btnCerrar").click(function() {
+  localStorage.removeItem('rut');
+  localStorage.removeItem('nombre');
+  location.href ="../index.html";
 });
 function Verificar_Acreditacion() {
   document.getElementById("btnAutenticar").style.display = "none";
