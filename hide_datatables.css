@@ -1,0 +1,32 @@
+﻿    .dataTables_filter {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .toHide {
+        display: none;
+    }
+
+    .toAlignC {
+        text-align: center;
+    }
+
+    .toAlignR {
+        text-align: right;
+    }
+
+    .toAlignL {
+        text-align: left;
+    }
+    input {
+        outline: none;
+        border: none;
+    }
+    input.transparent-input{
+        background-color:rgba(0,0,0,0) !important;
+        border:none !important;
+        border-color: coral;
+     }
