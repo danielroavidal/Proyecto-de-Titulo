@@ -17,13 +17,13 @@ if (isset($_POST['RegTemp']) && !empty($_POST['RegTemp'])) {
 
 	if (strtoupper($vStamp) == strtoupper($salt)) {
 
-		$sql1 		= "SELECT MAX(finger_id) as fid FROM tb_finger WHERE user_id=" . $user_id;
+		$sql1 		= "SELECT MAX(finger_id) as fid FROM tb_finger WHERE rut=" . $user_id;
 		$result1 	= mysqli_query($conn, $sql1);
 		$data 		= mysqli_fetch_array($result1);
 		$fid 		= $data['fid'];
 
 		if ($fid == 0) {
-			$sq2 		= "INSERT INTO tb_finger SET user_id='" . $user_id . "', null, finger_data='" . $regTemp . "' ";
+			$sq2 		= "INSERT INTO tb_finger SET rut='" . $user_id . "', null, finger_data='" . $regTemp . "' ";
 			$result2	= mysqli_query($conn, $sq2);
 			if ($result1 && $result2) {
 				$res['result'] = true;
